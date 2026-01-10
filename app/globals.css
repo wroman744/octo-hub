@@ -1,0 +1,445 @@
+:root {
+  --bg0: #050612;
+  --bg1: #060a1a;
+
+  --card: rgba(255, 255, 255, 0.06);
+  --cardBorder: rgba(255, 255, 255, 0.12);
+
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.70);
+
+  --glow1: rgba(109, 40, 217, 0.35); /* purple */
+  --glow2: rgba(34, 211, 238, 0.22); /* cyan */
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+
+  background:
+    radial-gradient(900px 600px at 20% 10%, var(--glow1), transparent 55%),
+    radial-gradient(900px 600px at 80% 20%, var(--glow2), transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+/* Center layout */
+.octo-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+/* Glass card */
+.octo-card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+/* Header row */
+.octo-top {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.octo-badge {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(109, 40, 217, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 35px rgba(109, 40, 217, 0.18);
+}
+
+.octo-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.octo-sub {
+  margin: 6px 0 0 0;
+  color: var(--muted);
+}
+
+.octo-status {
+  margin-top: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Make wallet button look nicer */
+.wallet-adapter-button {
+  border-radius: 14px !important;
+}
+/* GLOBAL TEXT STYLE */
+body {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+/* ===== Octo Hub Layout (Centered) ===== */
+
+.hub-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.hub-wrap {
+  width: min(720px, 100%);
+  text-align: center;
+}
+
+.hub-title {
+  margin: 0 0 14px 0;
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hub-sub {
+  margin: 0 auto 26px auto;
+  max-width: 620px;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.5;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.hub-actions {
+  display: grid;
+  gap: 18px;
+  width: min(640px, 100%);
+  margin: 0 auto;
+}
+
+.hub-primary,
+.hub-primary button {
+  width: 100% !important;
+  height: 76px !important;
+  border-radius: 22px !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  justify-content: center !important;
+}
+
+.hub-secondary {
+  width: 100%;
+  height: 76px;
+  border-radius: 22px;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: inherit;
+  cursor: pointer;
+}
+
+.hub-secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hub-footer {
+  margin-top: 34px;
+  font-size: 16px;
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+/* ===== CONNECT WALLET BUTTON OVERRIDE ===== */
+
+.hub-wallet-wrap {
+  width: 100%;
+}
+
+.hub-connect,
+.hub-connect button {
+  width: 100% !important;
+  height: 76px !important;
+  border-radius: 22px !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #7c3aed
+  ) !important;
+  border: none !important;
+  color: white !important;
+  justify-content: center !important;
+}
+
+/* Force label text */
+.hub-connect .wallet-adapter-button-start-icon {
+  display: none;
+}
+
+.hub-connect::after {
+  content: "CONNECT WALLET";
+}
+/* --- FORCE WalletMultiButton to match other buttons --- */
+.hub-connect {
+  width: 100%;
+  max-width: 520px;
+  height: 64px;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+
+  padding: 0 !important;
+  margin: 0 auto;
+
+  background: #6b3df5 !important;
+}
+
+/* Remove Wallet Adapter internal spacing */
+.hub-connect span {
+  margin: 0 !important;
+}
+/* ===== WalletMultiButton: force it to match hub-secondary buttons ===== */
+
+/* Make the whole actions area a fixed max width (same as your big buttons) */
+.hub-actions{
+  width: min(920px, 92vw);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  align-items: stretch; /* KEY: makes buttons fill the width */
+}
+
+
+/* Wallet wrapper should be full width */
+.hub-wallet-wrap{
+  width: 100%;
+  display: block; /* KEY: stop centering behavior */
+}
+
+
+/* Target the actual Solana wallet adapter button */
+.hub-wallet-wrap .wallet-adapter-button,
+.hub-wallet-wrap .wallet-adapter-button-trigger,
+button.hub-connect{
+  width: 100% !important;
+  height: 84px !important;         /* match your big buttons */
+  border-radius: 22px !important;  /* match your big buttons */
+  font-size: 24px !important;
+  font-weight: 700 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: #6b3df5 !important;  /* your purple */
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Remove any internal spacing the component adds */
+.hub-wallet-wrap .wallet-adapter-button-start-icon,
+.hub-wallet-wrap .wallet-adapter-button-end-icon{
+  margin: 0 10px 0 0 !important;
+}
+/* === FIX: make WalletMultiButton same size + perfectly centered === */
+
+.hub-actions{
+  width: min(920px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.hub-wallet-wrap{
+  width: 100%;
+  display: block;
+}
+
+/* Force Solana wallet adapter button to fill the row */
+.hub-wallet-wrap .wallet-adapter-button,
+.hub-wallet-wrap .wallet-adapter-button-trigger,
+.hub-wallet-wrap button,
+button.hub-connect{
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+
+  height: 84px !important;        /* match your big buttons */
+  border-radius: 26px !important; /* match your big buttons */
+  padding: 0 28px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  font-size: 26px !important;
+  font-weight: 800 !important;
+
+  box-sizing: border-box !important;
+}
+
+/* If the adapter injects weird margins */
+.hub-wallet-wrap .wallet-adapter-button{
+  margin: 0 !important;
+}
+/* ===== OCTO HUB ACTIONS LAYOUT ===== */
+.hub-actions{
+  width: min(860px, 92vw);
+  margin: 28px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.hub-wallet-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: stretch;
+}
+
+/* ===== FORCE WALLET BUTTON TO MATCH SIZE ===== */
+/* WalletMultiButton renders a <button> with wallet-adapter classes.
+   The className you pass gets added too, so we target both. */
+.hub-connect{
+  width: 100% !important;
+  min-height: 88px;            /* match your big buttons */
+  border-radius: 32px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 28px;
+  letter-spacing: 0.03em;
+  box-sizing: border-box;
+}
+
+/* Extra safety for the wallet-adapter built-in classes */
+.hub-connect.wallet-adapter-button,
+.hub-connect.wallet-adapter-button-trigger{
+  width: 100% !important;
+  min-height: 88px;
+  border-radius: 32px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+/* Make the wallet button match the big buttons exactly */
+.hub-wallet-wrap {
+  width: min(820px, 92vw);
+  margin: 0 auto;
+}
+
+.hub-wallet-btn,
+.hub-wallet-wrap .wallet-adapter-button {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* If your big buttons are a specific height, match it here too */
+.hub-wallet-wrap .wallet-adapter-button {
+  height: 80px;            /* adjust if your other buttons differ */
+  border-radius: 28px;     /* match your style */
+}
+/* ---- FORCE ALL ACTION BUTTONS TO ALIGN + MATCH WIDTH ---- */
+
+.hub-actions{
+  width: min(920px, 92vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: stretch; /* makes children take full width */
+}
+
+/* make every "hub-secondary" button full width */
+.hub-secondary{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* wallet adapter button MUST be forced to full width */
+.hub-wallet-wrap{
+  width: 100%;
+}
+
+.hub-wallet-wrap .wallet-adapter-button,
+.hub-wallet-wrap .wallet-adapter-button-trigger{
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+/* ===== FORCE WALLET BUTTON TO MATCH THE BIG BUTTONS ===== */
+
+/* Make the whole actions stack a fixed width and centered */
+.hub-actions{
+  width: min(920px, 92vw) !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 22px !important;
+  align-items: stretch !important; /* makes children full width */
+}
+
+/* IMPORTANT: wallet adapter adds a wrapper div */
+.hub-wallet-wrap{
+  width: 100% !important;
+  display: block !important;
+}
+
+/* This wrapper is the reason your button won't stretch */
+.hub-wallet-wrap .wallet-adapter-dropdown{
+  width: 100% !important;
+}
+
+/* Now force the actual button to fill the width */
+.hub-wallet-wrap .wallet-adapter-button,
+.hub-wallet-wrap .wallet-adapter-button-trigger{
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
