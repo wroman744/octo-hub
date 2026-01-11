@@ -17,22 +17,16 @@ const SOL_MINT = "So11111111111111111111111111111111111111112";
  * Builds a Jupiter swap link that ALWAYS points to your OCTO mint.
  * You can optionally pass an amount in lamports (for SOL) or token base units.
  */
-function getJupiterSwapUrl(opts?: {
-  inputMint?: string;
-  outputMint?: string;
-  amount?: string; // keep as string to avoid unit confusion
-}) {
-  const inputMint = opts?.inputMint ?? SOL_MINT;
-  const outputMint = opts?.outputMint ?? OCTO_MINT;
-
+function getJupiterSwapUrl() {
   const url = new URL("https://jup.ag/swap");
-  url.searchParams.set("inputMint", inputMint);
-  url.searchParams.set("outputMint", outputMint);
-
-  if (opts?.amount) url.searchParams.set("amount", opts.amount);
-
+  url.searchParams.set("inputMint", SOL_MINT);
+  url.searchParams.set("outputMint", OCTO_MINT);
   return url.toString();
 }
+
+
+
+
 
 export default function Home() {
   const { connected } = useWallet();
