@@ -28,13 +28,24 @@ export default function Home() {
           </div>
 
 
-         <button className="hub-secondary" type="button" disabled={!connected}>
-            CLAIM REWARDS
-          </button>
+         <a
+  href="https://t.me/octobunnycoin"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hub-secondary"
+>
+  JOIN COMMUNITY
+</a>
+<button
+  className="hub-secondary"
+  type="button"
+  disabled={!connected}
+  onClick={() => (window.location.href = "/rewards")}
+>
+  CLAIM REWARDS - COMING SOON
+</button>
 
-          <button className="hub-secondary" type="button">
-            JOIN COMMUNITY
-          </button>
+
         </div>
 
         <div className="hub-footer">POWERED BY SOLANA • OPTIMIZED FOR MOBILE</div>
