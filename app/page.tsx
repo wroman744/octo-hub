@@ -17,13 +17,10 @@ const SOL_MINT = "So11111111111111111111111111111111111111112";
  * Builds a Jupiter swap link that ALWAYS points to your OCTO mint.
  * You can optionally pass an amount in lamports (for SOL) or token base units.
  */
-const onGetOcto = () => {
-  window.open(
-    "https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=3aY2hsjTqRSqQU1dbFGgvMKzeuUSos8inD876ZTFMsDe",
-    "_blank",
-    "noopener,noreferrer"
-  );
-};
+function getJupiterSwapUrl() {
+  return "https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=3aY2hsjTqRSqQU1dbFGgvMKzeuUSos8inD876ZTFMsDe";
+}
+
 
 
 
